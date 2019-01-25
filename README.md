@@ -5,11 +5,11 @@
 
 This gem is a plugin for roda. It offers all the needed functions to authenticate a user with a portier broker that is hosted elsewhere. It also listens on `POST /_portier_assert` for the response of the broker.
 
-Starting point is the function `render_login_form`. It creates a nonce and emits a login form, which asks the user for an email address. User and nonce, email address and some information about the origin site are then sent to the broker. The broker checks that the user indeeds controls the email address, by either sending a token or asking for an OpenID login (when encountering gmail or an existing self hosted Identity Provier). If the control is confirmed the broker redirects back to this roda application with a jwt token, where the plugin will check that the token is valid. If it is, `session[:porter_email]` is set to the email address the user provided initially.
+Starting point is the function `render_login_form`. It creates a nonce and emits a login form, which asks the user for an email address. User and nonce, email address and some information about the origin site are then sent to the broker. The broker checks that the user indeeds controls the email address, by either sending a token or asking for an OpenID login (when encountering gmail or an existing self hosted Identity Provider). If the control is confirmed the broker redirects back to this roda application with a jwt token, where the plugin will check that the token is valid. If it is, `session[:porter_email]` is set to the email address the user provided initially.
 
 # How to get started
 
-There is a complete working demo at [onli/roda-portier-example/](https://github.com/onli/roda-portier-example/). But in short, after installing this gem it works like this:
+There is the code of a complete working demo at [onli/roda-portier-example/](https://github.com/onli/roda-portier-example/). But in short, after installing this gem it works like this:
 
 ```
 require 'roda'
