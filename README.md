@@ -16,7 +16,7 @@ require 'roda'
 require 'securerandom'
 
 class PortierDemo < Roda
-    # Tou could also try rodas session plugin, but it refused to work for me
+    # You could also try rodas session plugin, but it refused to work for me
     use Rack::Session::Cookie, secret: "some_nice_long_random_string_DSKJH4378EYR7EGKUFH", key: "_myapp_session"
     plugin :portier
 
