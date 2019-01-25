@@ -9,7 +9,7 @@ Starting point is the function `render_login_form`. It creates a nonce and emits
 
 # How to get started
 
-There is the code of a complete working demo at [onli/roda-portier-example/](https://github.com/onli/roda-portier-example/). But in short, after installing this gem it works like this:
+There is the code of a complete working demo at [onli/roda-portier-example](https://github.com/onli/roda-portier-example/). But in short, after installing this gem it works like this:
 
 ```
 require 'roda'
