@@ -48,9 +48,9 @@ Note how at no point you have to save or work with passwords. But in a complete 
 
 You can also set some options when initializing the plugin:
 
-    * `broker_url`: The default points https://broker.portier.io, but you can change that, sicne theb roker can be self-hosted
-    * `login_url`: Redirect target of the `authorize!` function
-    * `button_class`: CSS class of the login button
-    * `button_text`: Text of the login button
+ * `broker_url`: The default points https://broker.portier.io, but you can change that, sicne theb roker can be self-hosted
+ * `login_url`: Redirect target of the `authorize!` function
+ * `button_class`: CSS class of the login button
+ * `button_text`: Text of the login button
 
 
