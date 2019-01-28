@@ -25,10 +25,10 @@ module Roda::RodaPlugins
 			app.opts[:portier].freeze
 		end
 		
-		# load the sinatra helpers plugins, we need its url method to buidl the login form
-		def self.load_dependencies(app)
-			app.plugin :sinatra_helpers
-		end
+		# load the sinatra helpers plugins, we need its url method to build the login form
+        def self.load_dependencies(app, opts={})
+            app.plugin :sinatra_helpers
+        end
 		
 		module InstanceMethods
 	
@@ -53,10 +53,10 @@ module Roda::RodaPlugins
 				! session[:portier_email].nil?
 			end
 			
-			def authorize!
-				login_url = #{request.roda_class.opts[:portier][:login_url]}
-				redirect login_url unless authorized?
-			end
+            def authorize!  
+                login_url = request.roda_class.opts[:portier][:login_url]
+                redirect login_url unless authorized?
+            end
 			
 			def authorized_email
 				session[:portier_email]
@@ -111,7 +111,6 @@ module Roda::RodaPlugins
 		
 		module ClassMethods
 			def route(*args, &block)
-				puts "portier route"
 				super do |r|
 					r.post "_portier_assert" do
 						assert(id_token: r.params["id_token"])
