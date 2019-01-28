@@ -28,6 +28,10 @@ class PortierDemo < Roda
                 render_login_form
             end
         end
+        
+        r.post "_portier_assert" do
+            assert(id_token: r.params["id_token"])
+        end
 
         r.get 'secure' do
             authorize!         # require a user be logged in

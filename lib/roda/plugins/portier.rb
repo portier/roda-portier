@@ -109,18 +109,6 @@ module Roda::RodaPlugins
 		
 		end
 		
-		module ClassMethods
-			def route(*args, &block)
-				super do |r|
-					r.post "_portier_assert" do
-						assert(id_token: r.params["id_token"])
-					end
-					instance_exec(r, &block)
-				end
-				super(&block)
-			end
-		end
-		
 		
 	end
 	
